@@ -2,6 +2,7 @@ import arc.*;
 public class cptNathan{
 	public static void main(String[] args){
 	Console con = new Console();
+	con.println("test");
 	 int ROWS = 6;
      int COLS = 7;
      int[][] board = new int[ROWS][COLS]; // Board represented by a 2D array
@@ -61,3 +62,4 @@ public class cptNathan{
 
 
 
+}
