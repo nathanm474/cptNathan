@@ -2,7 +2,7 @@ import arc.*;
 
 public class cptNathan {
     // Game settings
-     int ROWS = 6;
+    int ROWS = 6;
     int COLS = 7;
     int[][] board = new int[ROWS][COLS]; // Board represented by a 2D array
     int player1Wins = 0, player2Wins = 0;
@@ -41,7 +41,8 @@ public class cptNathan {
         }
     }
 
-    //  method to display main menu
+
+    //method to display main menu
     public void displayMainMenu() {
         con.println("\n----- Main Menu -----");
         con.println("1. Play Game");
@@ -51,7 +52,7 @@ public class cptNathan {
         con.print("Enter your choice: ");
     }
 
-    //  method to start a new game
+
     public void startGame() {
         resetBoard();
         getPlayerNames();
@@ -88,7 +89,7 @@ public class cptNathan {
         }
     }
 
-    //  method to get player names
+
     public void getPlayerNames() {
         con.print("Enter Player 1's name: ");
         player1Name = con.readLine();
@@ -98,7 +99,7 @@ public class cptNathan {
         currentPlayerNum = 1;
     }
 
-    //method to reset the game board
+
     public void resetBoard() {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
@@ -127,7 +128,7 @@ public class cptNathan {
         con.println();
     }
 
-    //method to drop a piece in the chosen column
+
     public boolean dropPiece(int col) {
         for (int row = ROWS - 1; row >= 0; row--) {
             if (board[row][col] == 0) {
@@ -138,7 +139,7 @@ public class cptNathan {
         return false; // Column is full
     }
 
-    //  method to switch between players
+
     public void switchPlayer() {
         if (currentPlayerNum == 1) {
             currentPlayer = player2Name;
@@ -149,7 +150,7 @@ public class cptNathan {
         }
     }
 
-    // method to check for a winner (horizontal, vertical, and diagonal)
+
     public boolean checkWinner() {
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
@@ -166,7 +167,6 @@ public class cptNathan {
         return false;
     }
 
-    // method to check direction for 4 connected pieces
     public boolean checkDirection(int row, int col, int dRow, int dCol) {
         int player = board[row][col];
         for (int i = 1; i < 4; i++) {
@@ -186,7 +186,7 @@ public class cptNathan {
         con.println("Player 2: " + player2Name + " - Wins: " + player2Wins);
     }
 
-    // method to choose theme (placeholder)
+
     public void chooseTheme() {
         con.println("Choose a theme:");
         con.println("1. Christmas");
