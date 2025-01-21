@@ -41,7 +41,7 @@ public class cptNathan {
         }
     }
 
-    // Instance method to display main menu
+    //method to display main menu
     public void displayMainMenu() {
         con.println("\n----- Main Menu -----");
         con.println("1. Play Game");
@@ -51,7 +51,7 @@ public class cptNathan {
         con.print("Enter your choice: ");
     }
 
-    // Instance method to start a new game
+    // method to start a new game
     public void startGame() {
         resetBoard();
         getPlayerNames();
@@ -88,7 +88,7 @@ public class cptNathan {
         }
     }
 
-    // Instance method to get player names
+    //method to get player names
     public void getPlayerNames() {
         con.print("Enter Player 1's name: ");
         player1Name = con.readLine();
@@ -98,7 +98,7 @@ public class cptNathan {
         currentPlayerNum = 1;
     }
 
-    // Instance method to reset the game board
+    // method to reset the game board
     public void resetBoard() {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
@@ -107,7 +107,7 @@ public class cptNathan {
         }
     }
 
-    // Instance method to print the game board
+    // method to print the game board
     public void printBoard() {
         con.println("-------------");
         for (int i = 0; i < ROWS; i++) {
@@ -127,7 +127,7 @@ public class cptNathan {
         con.println();
     }
 
-    // Instance method to drop a piece in the chosen column
+    // method to drop a piece in the chosen column
     public boolean dropPiece(int col) {
         for (int row = ROWS - 1; row >= 0; row--) {
             if (board[row][col] == 0) {
@@ -138,7 +138,7 @@ public class cptNathan {
         return false; // Column is full
     }
 
-    // Instance method to switch between players
+    // method to switch between players
     public void switchPlayer() {
         if (currentPlayerNum == 1) {
             currentPlayer = player2Name;
@@ -149,7 +149,7 @@ public class cptNathan {
         }
     }
 
-    // Instance method to check for a winner (horizontal, vertical, and diagonal)
+    //method to check for a winner (horizontal, vertical, and diagonal)
     public boolean checkWinner() {
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
@@ -166,7 +166,7 @@ public class cptNathan {
         return false;
     }
 
-    // Instance method to check direction for 4 connected pieces
+    //method to check direction for 4 connected pieces
     public boolean checkDirection(int row, int col, int dRow, int dCol) {
         int player = board[row][col];
         for (int i = 1; i < 4; i++) {
@@ -179,14 +179,14 @@ public class cptNathan {
         return true;
     }
 
-    // Instance method to view high scores (simply displays current players' scores)
+    // method to view high scores (simply displays current players' scores)
     public void viewHighScores() {
         con.println("Highscores: ");
         con.println("Player 1: " + player1Name + " - Wins: " + player1Wins);
         con.println("Player 2: " + player2Name + " - Wins: " + player2Wins);
     }
 
-    // Instance method to choose theme (placeholder)
+    //method to choose theme (placeholder)
     public void chooseTheme() {
         con.println("Choose a theme:");
         con.println("1. Christmas");
